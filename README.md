@@ -1,5 +1,5 @@
 __感染症数理モデル__
-、、、
+```
 import matplotlib.pyplot as plt
 
 N = 126000000  # 日本の人口 2021年3月1日現在
@@ -27,4 +27,4 @@ for t in range(200):
 plt.plot(aS, "v-", label="S")
 plt.plot(aI, "o-", label="I")
 plt.plot(aR, "^-", label="R")
-、、、
+```

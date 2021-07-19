@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 
 N = 126000000  # 日本の人口 2021年3月1日現在
-R0 = 2
-gamma = 0.2
-beta = R0 * gamma / N
+R0 = 2 #パラメータ
+gamma = 0.2 # 回復/死亡率
+beta = R0 * gamma / N # 感染率
 
 S = N  # 未感染者
 I = 1  # 感染者
@@ -22,6 +22,7 @@ for t in range(200):
     aR.append(R / N)
     aRt.append(Rt)
 
+plt.title("SIR MODEL")
 plt.plot(aS, "v-", label="S")
 plt.plot(aI, "o-", label="I")
 plt.plot(aR, "^-", label="R")

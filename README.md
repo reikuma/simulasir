@@ -1,30 +1,13 @@
-__感染症数理モデル__
+__感染症数理モデル__  
+・Sはsusceptible  
+・Iはinfectious  
+・Rはremoved/recovered  
+
+3つのコンパートメントに分け，感染に係る状態
+の時間的な変化をボトムアップ式にモデル化
 ```
-import matplotlib.pyplot as plt
-
-N = 126000000  # 日本の人口 2021年3月1日現在
-R0 = 2
-gamma = 0.2
-beta = R0 * gamma / N
-
 S = N  # 未感染者
 I = 1  # 感染者
 R = 0  # 免疫感染者＋死亡者
-
-aS = [S / N]
-aI = [I / N]
-aR = [R / N]
-aRt = [R0]
-
-for t in range(200):
-    S, I, R = S - beta * S * I, I + beta * S * I - gamma * I, R + gamma * I
-    Rt = beta * S / gamma
-    aS.append(S / N)
-    aI.append(I / N)
-    aR.append(R / N)
-    aRt.append(Rt)
-
-plt.plot(aS, "v-", label="S")
-plt.plot(aI, "o-", label="I")
-plt.plot(aR, "^-", label="R")
 ```
+![Figure_1](https://user-images.githubusercontent.com/65733429/126119861-842fe2f1-d315-4a57-bf5b-c311f15c6d9b.png)
